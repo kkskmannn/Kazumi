@@ -119,7 +119,7 @@
             run: |
               mkdir build/ios/iphoneos/Payload
               cp -R build/ios/iphoneos/Runner.app build/ios/iphoneos/Payload/Runner.app
-              zip -q -r Kazumi_ios_${{ env.tag }}_no_sign.ipa build/ios/iphoneos/Payload
+              zip -q -r Kazumi_ios_no_sign.ipa build/ios/iphoneos/Payload
           - name: Upload iOS build
             uses: actions/upload-artifact@v4
             with:
@@ -179,7 +179,7 @@
           - name: List files in ios_outputs directory
             run: ls -l ios_outputs   
           - name: Copy ios build file to root
-            run: cp ios_outputs/* Kazumi_ios_${{ env.tag }}_no_sign.ipa              
+            run: cp ios_outputs/* Kazumi_ios_no_sign.ipa              
 
           - name: Sign APK
             id: sign_app
