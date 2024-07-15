@@ -559,15 +559,17 @@ class _PlayerItemState extends State<PlayerItem>
                                       )
                                     : Container(),
                                 GestureDetector(
-                                  onTap: _handleTap,
-                                    /*try {
+                                  onTap: () {
+                                    _handleTap();
+                                    try {
                                       playerController.volume =
                                           await FlutterVolumeController
                                                   .getVolume() ??
                                               playerController.volume;
                                     } catch (e) {
                                       debugPrint(e.toString());
-                                    }*/
+                                    }
+                                  },
                                   child: Container(
                                     color: Colors.transparent,
                                     width: double.infinity,
